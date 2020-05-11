@@ -1,0 +1,31 @@
+@uri = http://localhost:3001/home
+
+
+
+### 展示出所有的用户
+GET  {{uri}}/users
+
+
+
+###  注册
+POST {{uri}}/register
+Content-Type: application/json
+
+{
+    "username":"user3",
+    "password":"123456"
+}
+
+### 登录
+POST {{uri}}/login
+Content-Type: application/json
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+
+
+### 进入后台的时候就是周admin的时候的路由，就要求验证，这个时候就需要携带token
+GET http://localhost:3001/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjkzM2M5Y2YzYzNmMzNmY2FkYjU2MCIsImlhdCI6MTU4OTIwMTU1Nn0.Hfifqj7MlfqkaBuL501wfwARmwDMpMz6k7ot_5fzFQo

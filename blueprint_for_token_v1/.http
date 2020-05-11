@@ -1,0 +1,33 @@
+@uri = http://localhost:3001/api
+
+
+### 测试
+GET {{uri}}
+
+### 展示出所有的用户
+GET  {{uri}}/users
+
+
+
+###  注册
+POST {{uri}}/register
+Content-Type: application/json
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+
+### 登录
+POST {{uri}}/login
+Content-Type: application/json
+
+{
+    "username":"user2",
+    "password":"123456"
+}
+
+
+### 获取个人信息,传递的是当前保持状态了的用户
+GET {{uri}}/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVlYjhhNDIzOTM4YzdhNmQ3NDg5ZDJlMyIsImlhdCI6MTU4OTE2MDY0Nn0.UeSGbDgUrQaThemD18iIAGW6t-lc8R_R5tDvFamrgDw
